@@ -8,7 +8,7 @@ console.log();
 do {
     lowerValue = Number(readlineSync.question("Lower bound: "));
     higherValue = Number(readlineSync.question("Upper bound: "));
-} while ((lowerValue < MIN || higherValue > MAX) || (lowerValue > higherValue));
+} while ((lowerValue < MIN || higherValue > MAX) || (lowerValue >= higherValue));
 
 while (higherValue >= lowerValue) {
     if (lowerValue % 2 === 0) {
