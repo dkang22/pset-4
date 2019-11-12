@@ -3,6 +3,8 @@ const readlineSync = require("readline-sync");
 MIN = Number.MIN_SAFE_INTEGER;
 MAX = Number.MAX_SAFE_INTEGER;
 let sum = 0;
+let lowerValue;
+let higherValue;
 
 console.log();
 do {
