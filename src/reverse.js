@@ -2,22 +2,23 @@ const readlineSync = require("readline-sync");
 
 MIN = 1;
 MAX = Number.MAX_SAFE_INTEGER;
-let posInteger = 0;
-let reverseInt = 0;
+let posInteger;
+let reverse = "";
+let digit;
 
 console.log();
 do {
     posInteger = Number(readlineSync.question("Positive integer: "));
-} while (posInteger < MIN || posInteger > MAX);
+} while (posInteger < MIN || posInteger > MAX || Number.isNaN(posInteger));
 
-while (posInteger != 0) {
-    reverseInt *= 10;
-    reverseInt += (posInteger % 10);
-    posInteger -= (posInteger % 10);
-    posInteger /= 10;
+while (posInteger !== 0) {
+    digit = posInteger % 10;
+    posInteger = Math.floor(posInteger/10);
+    if (posInteger !== 0) {
+        reverse = reverse + digit + ", ";
+    } else {
+        reverse = reverse + digit + ".\n";
+    }
 }
 
-reverseInt = String(reverseInt);
-let length = reverseInt.length;
-
-console.log(reverseInt);
+console.log("\n" + reverse);
