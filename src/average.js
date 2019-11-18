@@ -14,9 +14,9 @@ do {
         numOfIntegersEntered++;
         sum += nonNegativeInteger;
     }
-} while ((nonNegativeInteger >= MIN && nonNegativeInteger < MAX) || nonNegativeInteger > MAX);
+} while ((nonNegativeInteger >= MIN && nonNegativeInteger < MAX) || nonNegativeInteger > MAX || Number.isNaN(nonNegativeInteger));
 
 average = sum/numOfIntegersEntered;
 
-sum = sum.toLocaleString("en", {minimumFractionDigits: 3, maximumFractionDigits: 3 });
-console.log("\n" + sum + ".");
+average = average.toLocaleString("en", {minimumFractionDigits: 3, maximumFractionDigits: 3 });
+console.log("\n" + average + ".");
