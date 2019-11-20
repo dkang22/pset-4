@@ -14,7 +14,7 @@ do {
     nonNegativeInteger = Number(readlineSync.question("Non-negative integer: "));
 } while (nonNegativeInteger < MIN || nonNegativeInteger > MAX || Number.isNaN(nonNegativeInteger));
 
-for (x = 2; x <= (nonNegativeInteger/2); x++) {
+for (let x = 2; x <= (nonNegativeInteger/2); x++) {
     if (nonNegativeInteger % x == 0) {
         primeTester = 1;
     }
@@ -27,6 +27,8 @@ if (nonNegativeInteger == 0) {
 } else {
     console.log("\nPrime.");
 }
+
+console.log();
 
 // digitsTester = nonNegativeInteger;
 //

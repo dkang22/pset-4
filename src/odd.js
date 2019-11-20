@@ -29,3 +29,5 @@ while (posInteger > 0) {
 }
 
 console.log("\n" + sum + ".");
+
+console.log();

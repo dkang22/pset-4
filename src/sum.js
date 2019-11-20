@@ -23,3 +23,5 @@ while (higherValue >= lowerValue) {
 
 sum = sum.toLocaleString("en");
 console.log("\n" + sum + ".");
+
+console.log();

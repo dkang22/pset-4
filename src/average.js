@@ -20,3 +20,5 @@ average = sum/numOfIntegersEntered;
 
 average = average.toLocaleString("en", {minimumFractionDigits: 3, maximumFractionDigits: 3 });
 console.log("\n" + average + ".");
+
+console.log();

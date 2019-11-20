@@ -17,8 +17,10 @@ while (posInteger !== 0) {
     if (posInteger !== 0) {
         reverse = reverse + digit + ", ";
     } else {
-        reverse = reverse + digit + ".\n";
+        reverse = reverse + digit + ".";
     }
 }
 
 console.log("\n" + reverse);
+
+console.log();

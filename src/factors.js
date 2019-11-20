@@ -12,7 +12,7 @@ do {
     posInteger = Number(readlineSync.question("Positive integer: "));
 } while (posInteger < MIN || posInteger > MAX || Number.isNaN(posInteger));
 
-for (x = 1; x <= (posInteger/2); x++) {
+for (let x = 1; x <= (posInteger/2); x++) {
     if (posInteger % x == 0) {
         otherFactor = String(posInteger/x)
         x = String(x);
@@ -27,3 +27,5 @@ for (x = 1; x <= (posInteger/2); x++) {
 }
 
 console.log("\n" + print);
+
+console.log();

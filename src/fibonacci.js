@@ -33,3 +33,5 @@ if (fibonacciNumCounter == 1) {
 } else {
     console.log("\n" + thirdNum + ".");
 }
+
+console.log();
