@@ -3,29 +3,55 @@ const readlineSync = require("readline-sync");
 MIN = 1;
 MAX = Number.MAX_SAFE_INTEGER;
 let posInteger;
-let otherFactor;
+let otherFactor = 0;
 let print = "";
-let alreadyPrinted;
 
 console.log();
 do {
     posInteger = Number(readlineSync.question("Positive integer: "));
 } while (posInteger < MIN || posInteger > MAX || Number.isNaN(posInteger));
 
-for (let x = 1; x <= (posInteger/2); x++) {
+for (let x = 1; x <= (Math.sqrt(posInteger)); x++) {
     if (posInteger % x == 0) {
-        otherFactor = String(posInteger/x)
-        x = String(x);
+        otherFactor = posInteger / x;
 
-        if (Math.pow(x, 2) == posInteger) {
-            print = print + x + ".";
-            x = posInteger;
+        if (x == 1) {
+            if (Math.pow(x, 2) == posInteger) {
+                x = String(x);
+                print = print + x;
+                x = Number(x);
+                x = posInteger;
+            } else if (x == otherFactor) {
+                x = String(x);
+                print = print + x;
+                x = Number(x);
+                x = posInteger;
+            } else {
+                otherFactor = String(otherFactor);
+                print = print + x + ", " + otherFactor;
+            }
+
         } else {
-            print = print + x + ", " + otherFactor + ", ";
+            print = print + ", ";
+
+            if (Math.pow(x, 2) == posInteger) {
+                x = String(x);
+                print = print + x;
+                x = Number(x);
+                x = posInteger;
+            } else if (x == otherFactor) {
+                x = String(x);
+                print = print + x;
+                x = Number(x);
+                x = posInteger;
+            } else {
+                otherFactor = String(otherFactor);
+                print = print + x + ", " + otherFactor;
+            }
         }
     }
 }
 
-console.log("\n" + print);
+console.log("\n" + print + ".");
 
 console.log();
