@@ -9,7 +9,7 @@ let print = "";
 console.log();
 do {
     posInteger = Number(readlineSync.question("Positive integer: "));
-} while (posInteger < MIN || posInteger > MAX || Number.isNaN(posInteger));
+} while (posInteger < MIN || posInteger > MAX || Number.isNaN(posInteger) || posInteger != Math.floor(posInteger));
 
 for (let x = 1; x <= (Math.sqrt(posInteger)); x++) {
     if (posInteger % x == 0) {

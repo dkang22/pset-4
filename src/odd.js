@@ -9,7 +9,7 @@ let digit;
 console.log();
 do {
     posInteger = Number(readlineSync.question("Positive integer: "));
-} while (posInteger < MIN || posInteger > MAX || Number.isNaN(posInteger));
+} while (posInteger < MIN || posInteger > MAX || Number.isNaN(posInteger) || posInteger != Math.floor(posInteger));
 
 while (posInteger > 0) {
     digit = posInteger % 10;

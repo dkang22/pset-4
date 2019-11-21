@@ -11,7 +11,7 @@ let counter = 0;
 console.log();
 do {
     fibonacciNumCounter = Number(readlineSync.question("Positive integer: "));
-} while (fibonacciNumCounter < MIN || fibonacciNumCounter > MAX || Number.isNaN(fibonacciNumCounter));
+} while (fibonacciNumCounter < MIN || fibonacciNumCounter > MAX || Number.isNaN(fibonacciNumCounter) || fibonacciNumCounter != Math.floor(fibonacciNumCounter));
 
 counter = fibonacciNumCounter;
 

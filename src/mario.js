@@ -5,14 +5,11 @@ MAX = 24;
 let height;
 let rowLength;
 let hashtagNum;
-let print = "";
-let spaces = 1;
-let hashtags = 1;
 
 console.log();
 do {
     height = Number(readlineSync.question("Height: "));
-} while (height < MIN || height > MAX || Number.isNaN(height));
+} while (height < MIN || height > MAX || Number.isNaN(height) || height != Math.floor(height));
 
 rowLength = height + 1;
 hashtagNum = 2;
@@ -20,6 +17,10 @@ hashtagNum = 2;
 console.log();
 
 for (let x = 0; x < height; x++) {
+
+    let spaces = 1;
+    let hashtags = 1;
+    let print = "";
 
     while (spaces <= rowLength - hashtagNum) {
         print = print + " ";
@@ -33,9 +34,6 @@ for (let x = 0; x < height; x++) {
 
     console.log(print);
     hashtagNum++;
-    print = "";
-    spaces = 1;
-    hashtags = 1;
 }
 
 console.log();

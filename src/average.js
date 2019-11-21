@@ -14,7 +14,7 @@ do {
         numOfIntegersEntered++;
         sum += nonNegativeInteger;
     }
-} while ((nonNegativeInteger >= MIN && nonNegativeInteger < MAX) || nonNegativeInteger > MAX || Number.isNaN(nonNegativeInteger));
+} while ((nonNegativeInteger >= MIN && nonNegativeInteger < MAX) || nonNegativeInteger > MAX || Number.isNaN(nonNegativeInteger) || sum == 0);
 
 average = sum/numOfIntegersEntered;
 

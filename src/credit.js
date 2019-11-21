@@ -1,6 +1,7 @@
 const readlineSync = require("readline-sync");
 
-const MIN = 0;
+const MIN = 1000000000000;
+const MAX = 9999999999999999;
 
 let creditCardNumber;
 let creditCardNumberEvenDigit;
@@ -22,7 +23,7 @@ let cardNumberLength = 0;
 console.log();
 do {
     creditCardNumber = Number(readlineSync.question("Number: "));
-} while (creditCardNumber < MIN || Number.isNaN(creditCardNumber));
+} while (creditCardNumber < MIN || creditCardNumber > MAX || Number.isNaN(creditCardNumber) || creditCardNumber != Math.floor(creditCardNumber));
 
 creditCardNumberEvenDigit = creditCardNumber;
 creditCardNumberOddDigit = creditCardNumber;

@@ -12,7 +12,7 @@ let primeTester;
 console.log();
 do {
     nonNegativeInteger = Number(readlineSync.question("Non-negative integer: "));
-} while (nonNegativeInteger < MIN || nonNegativeInteger > MAX || Number.isNaN(nonNegativeInteger));
+} while (nonNegativeInteger < MIN || nonNegativeInteger > MAX || Number.isNaN(nonNegativeInteger) || nonNegativeInteger != Math.floor(nonNegativeInteger));
 
 for (let x = 2; x <= (nonNegativeInteger/2); x++) {
     if (nonNegativeInteger % x == 0) {
@@ -29,23 +29,3 @@ if (nonNegativeInteger == 0) {
 }
 
 console.log();
-
-// digitsTester = nonNegativeInteger;
-//
-// lastDigit = nonNegativeInteger % 10;
-//
-// while (digitsTester !== 0) {
-//     digit = digitsTester % 10;
-//     digitsTester = Math.floor(digitsTester/10);
-//     sumOfDigits += digit;
-// }
-//
-// if (nonNegativeInteger == 2 || nonNegativeInteger == 3 || nonNegativeInteger == 5 || nonNegativeInteger == 7) {
-//     console.log("\nPrime.");
-// } else if (sumOfDigits % 3 === 0) {
-//     console.log("\nNot prime.");
-// } else if (lastDigit % 2 === 0) {
-//     console.log("\nNot prime.");
-// } else {
-//     console.log("\nPrime.");
-// }
