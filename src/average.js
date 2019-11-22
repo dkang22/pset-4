@@ -10,11 +10,13 @@ let average = 0;
 console.log();
 do {
     nonNegativeInteger = Number(readlineSync.question("Non-negative integer: "));
-    if (nonNegativeInteger >= MIN && nonNegativeInteger < MAX) {
+    if (nonNegativeInteger != Math.floor(nonNegativeInteger)) {
+        sum = sum;
+    } else if (nonNegativeInteger >= MIN && nonNegativeInteger < MAX) {
         numOfIntegersEntered++;
         sum += nonNegativeInteger;
     }
-} while ((nonNegativeInteger >= MIN && nonNegativeInteger < MAX) || nonNegativeInteger > MAX || Number.isNaN(nonNegativeInteger) || sum == 0);
+} while ((nonNegativeInteger >= MIN && nonNegativeInteger < MAX) || nonNegativeInteger > MAX || Number.isNaN(nonNegativeInteger) || sum == 0 || nonNegativeInteger != Math.floor(nonNegativeInteger));
 
 average = sum/numOfIntegersEntered;
 
