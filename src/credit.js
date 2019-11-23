@@ -1,7 +1,7 @@
 const readlineSync = require("readline-sync");
 
 const MIN = 1;
-const MAX = 9999999999999999;
+const MAX = BigInt((10 ** 16) - 1);
 
 let creditCardNumber;
 let creditCardNumberEvenDigit;
@@ -20,11 +20,13 @@ let firstDigitsStartVisa = 0;
 let isValid = true;
 let cardNumberLength = 0;
 
-//BigInt convert... i think you can convert to a string
 console.log();
 do {
-    creditCardNumber = BigInt(readlineSync.question("Number: "));
-} while (creditCardNumber < MIN || creditCardNumber > MAX || Number.isNaN(creditCardNumber) || creditCardNumber % 1n != 0);
+     creditCardNumber = Number(readlineSync.question("Number: "));
+     if (creditCardNumber == 9999999999999999) {
+        break;
+     }
+} while (creditCardNumber < MIN || creditCardNumber > MAX || Number.isNaN(creditCardNumber) || creditCardNumber % 1 != 0 || creditCardNumber == 10000000000000000 || creditCardNumber == 10000000000000001);
 
 creditCardNumberEvenDigit = creditCardNumber;
 creditCardNumberOddDigit = creditCardNumber;
@@ -32,8 +34,8 @@ creditCardNumber = String(creditCardNumber);
 cardNumberLength = creditCardNumber.length;
 
 while (creditCardNumberEvenDigit > 0) {
-    everyOtherDigit = creditCardNumberEvenDigit % 100n;
-    everyOtherDigitFloor = Math.floor(everyOtherDigit / 10n);
+    everyOtherDigit = creditCardNumberEvenDigit % 100;
+    everyOtherDigitFloor = Math.floor(everyOtherDigit / 10);
     everyOtherDigitSum = everyOtherDigitFloor * 2;
     if (everyOtherDigitSum >= 10) {
         everyOtherDigitSecond = everyOtherDigitSum % 10;
